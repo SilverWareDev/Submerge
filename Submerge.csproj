@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0DEB755F-D57A-4285-9D70-C592E340CDB4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Submerge</RootNamespace>
+    <AssemblyName>Submerge</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamapplist.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamapps.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamclient.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamfriends.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameserver.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameserverclient.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameserverhttp.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameserverinventory.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameservernetworking.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameservernetworkingsockets.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameservernetworkingutils.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameserverstats.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameserverugc.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameserverutils.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamhtmlsurface.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamhttp.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteaminput.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteaminventory.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteammatchmaking.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteammusic.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteammusicremote.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamnetworking.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamnetworkingmessages.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamnetworkingsockets.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamnetworkingutils.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamparentalsettings.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamremoteplay.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamremotestorage.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamscreenshots.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamugc.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamuser.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamuserstats.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamutils.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\isteamvideo.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\NativeMethods.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\SteamCallbacks.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\SteamConstants.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\SteamEnums.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\autogen\SteamStructs.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\CallbackDispatcher.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\CallbackIdentity.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\InteropHelp.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\ISteamMatchmakingResponses.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\Packsize.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\Steam.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\MatchmakingTypes\gameserveritem_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\MatchmakingTypes\servernetadr_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamClientPublic\CGameID.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamClientPublic\CSteamID.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamClientPublic\HAuthTicket.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamClient\SteamAPIWarningMessageHook_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamClient\SteamAPI_CheckCallbackRegistered_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamDatagramTickets\SteamDatagramHostedAddress.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamDatagramTickets\SteamDatagramRelayAuthTicket.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamFriends\FriendsGroupID_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamHTMLSurface\HHTMLBrowser.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamHTTP\HTTPCookieContainerHandle.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamHTTP\HTTPRequestHandle.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamInput\InputActionSetHandle_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamInput\InputAnalogActionHandle_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamInput\InputDigitalActionHandle_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamInput\InputHandle_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamInput\SteamInputActionEventCallbackPointer.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamInput\SteamInputActionEvent_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamInventory\SteamInventoryResult_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamInventory\SteamInventoryUpdateHandle_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamInventory\SteamItemDef_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamInventory\SteamItemInstanceID_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamMatchmaking\HServerListRequest.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamMatchmaking\HServerQuery.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingSockets\ISteamNetworkingConnectionSignaling.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingSockets\ISteamNetworkingSignalingRecvContext.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\FSteamNetworkingSocketsDebugOutput.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\HSteamListenSocket.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\HSteamNetConnection.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\HSteamNetPollGroup.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\SteamNetworkingConfigValue_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\SteamNetworkingErrMsg.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\SteamNetworkingIdentity.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\SteamNetworkingIPAddr.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\SteamNetworkingMessage_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\SteamNetworkingMicroseconds.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\SteamNetworkingPOPID.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamNetworking\SNetListenSocket_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamNetworking\SNetSocket_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamRemotePlay\RemotePlaySessionID_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamRemoteStorage\PublishedFileId_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamRemoteStorage\PublishedFileUpdateHandle_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamRemoteStorage\UGCFileWriteStreamHandle_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamRemoteStorage\UGCHandle_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamScreenshots\ScreenshotHandle.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamTypes\AccountID_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamTypes\AppId_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamTypes\DepotId_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamTypes\PartyBeaconID_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamTypes\RTime32.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamTypes\SteamAPICall_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamTypes\SteamIPAddress_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamUGC\UGCQueryHandle_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamUGC\UGCUpdateHandle_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamUserStats\SteamLeaderboardEntries_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\SteamUserStats\SteamLeaderboard_t.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\Steam_api_common\HSteamPipe.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\types\Steam_api_common\HSteamUser.cs" />
+    <Compile Include="Core\Resources\Dependencies\Runtime\Version.cs" />
+    <Compile Include="Core\src\BuildInfo.cs" />
+    <Compile Include="Core\src\Main.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resources\Dependencies\net6\MelonLoader.deps.json" />
+    <None Include="Core\Resources\Dependencies\net6\MelonLoader.NativeHost.deps.json" />
+    <None Include="Core\Resources\Dependencies\net6\MelonLoader.runtimeconfig.json" />
+    <None Include="Core\Resources\Dependencies\net6\MelonStartScreen.deps.json" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamapplist.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamapps.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamclient.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamfriends.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameserver.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameserverclient.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameserverhttp.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameserverinventory.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameservernetworking.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameservernetworkingsockets.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameservernetworkingutils.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameserverstats.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameserverugc.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamgameserverutils.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamhtmlsurface.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamhttp.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteaminput.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteaminventory.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteammatchmaking.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteammusic.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteammusicremote.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamnetworking.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamnetworkingmessages.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamnetworkingsockets.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamnetworkingutils.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamparentalsettings.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamremoteplay.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamremotestorage.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamscreenshots.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamugc.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamuser.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamuserstats.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamutils.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\isteamvideo.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\NativeMethods.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\SteamCallbacks.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\SteamConstants.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\SteamEnums.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\autogen\SteamStructs.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\CallbackDispatcher.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\CallbackIdentity.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\com.rlabrecque.steamworks.net.asmdef" />
+    <None Include="Core\Resources\Dependencies\Runtime\com.rlabrecque.steamworks.net.asmdef.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\InteropHelp.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\ISteamMatchmakingResponses.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\Packsize.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\Steam.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\MatchmakingTypes.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\MatchmakingTypes\gameserveritem_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\MatchmakingTypes\servernetadr_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamClient.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamClientPublic.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamClientPublic\CGameID.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamClientPublic\CSteamID.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamClientPublic\HAuthTicket.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamClient\SteamAPIWarningMessageHook_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamClient\SteamAPI_CheckCallbackRegistered_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamDatagramTickets.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamDatagramTickets\SteamDatagramHostedAddress.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamDatagramTickets\SteamDatagramRelayAuthTicket.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamFriends.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamFriends\FriendsGroupID_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamHTMLSurface.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamHTMLSurface\HHTMLBrowser.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamHTTP.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamHTTP\HTTPCookieContainerHandle.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamHTTP\HTTPRequestHandle.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamInput.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamInput\InputActionSetHandle_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamInput\InputAnalogActionHandle_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamInput\InputDigitalActionHandle_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamInput\InputHandle_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamInput\SteamInputActionEventCallbackPointer.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamInput\SteamInputActionEvent_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamInventory.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamInventory\SteamInventoryResult_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamInventory\SteamInventoryUpdateHandle_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamInventory\SteamItemDef_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamInventory\SteamItemInstanceID_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamMatchmaking.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamMatchmaking\HServerListRequest.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamMatchmaking\HServerQuery.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamNetworking.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingSockets.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingSockets\ISteamNetworkingConnectionSignaling.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingSockets\ISteamNetworkingSignalingRecvContext.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\FSteamNetworkingSocketsDebugOutput.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\HSteamListenSocket.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\HSteamNetConnection.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\HSteamNetPollGroup.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\SteamNetworkingConfigValue_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\SteamNetworkingErrMsg.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\SteamNetworkingIdentity.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\SteamNetworkingIPAddr.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\SteamNetworkingMessage_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\SteamNetworkingMicroseconds.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamNetworkingTypes\SteamNetworkingPOPID.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamNetworking\SNetListenSocket_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamNetworking\SNetSocket_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamRemotePlay.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamRemotePlay\RemotePlaySessionID_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamRemoteStorage.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamRemoteStorage\PublishedFileId_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamRemoteStorage\PublishedFileUpdateHandle_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamRemoteStorage\UGCFileWriteStreamHandle_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamRemoteStorage\UGCHandle_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamScreenshots.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamScreenshots\ScreenshotHandle.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamTypes.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamTypes\AccountID_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamTypes\AppId_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamTypes\DepotId_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamTypes\PartyBeaconID_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamTypes\RTime32.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamTypes\SteamAPICall_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamTypes\SteamIPAddress_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamUGC.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamUGC\UGCQueryHandle_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamUGC\UGCUpdateHandle_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamUserStats.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamUserStats\SteamLeaderboardEntries_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\SteamUserStats\SteamLeaderboard_t.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\Steam_api_common.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\Steam_api_common\HSteamPipe.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\types\Steam_api_common\HSteamUser.cs.meta" />
+    <None Include="Core\Resources\Dependencies\Runtime\Version.cs.meta" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Core\Resources\Dependencies\net6\0Harmony.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\AsmResolver.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\AsmResolver.DotNet.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\AsmResolver.PE.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\AsmResolver.PE.File.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\AssetRipper.VersionUtilities.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\AssetsTools.NET.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\bHapticsLib.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Iced.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Il2CppInterop.Common.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Il2CppInterop.Generator.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Il2CppInterop.Runtime.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\IndexRange.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\MelonLoader.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\MelonLoader.NativeHost.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\MelonLoader.xml" />
+    <Content Include="Core\Resources\Dependencies\net6\MelonStartScreen.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Microsoft.Bcl.AsyncInterfaces.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Microsoft.Diagnostics.NETCore.Client.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Microsoft.Diagnostics.Runtime.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Microsoft.Extensions.Configuration.Abstractions.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Microsoft.Extensions.Configuration.Binder.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Microsoft.Extensions.Configuration.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Microsoft.Extensions.Logging.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Microsoft.Extensions.Options.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Microsoft.Extensions.Primitives.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Microsoft.Win32.SystemEvents.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Mono.Cecil.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Mono.Cecil.Mdb.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Mono.Cecil.Pdb.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Mono.Cecil.Rocks.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\MonoMod.RuntimeDetour.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\MonoMod.Utils.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\runtimes\win\lib\net6.0\System.Drawing.Common.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\runtimes\win\lib\net6.0\System.Windows.Extensions.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\System.Configuration.ConfigurationManager.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\System.Drawing.Common.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\System.Security.Cryptography.ProtectedData.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\System.Security.Permissions.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\System.Text.Json.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\System.Windows.Extensions.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\Tomlet.dll" />
+    <Content Include="Core\Resources\Dependencies\net6\WebSocketDotNet.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony, Version=2.10.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="AsmResolver, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\AsmResolver.dll</HintPath>
+    </Reference>
+    <Reference Include="AsmResolver.DotNet, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\AsmResolver.DotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="AsmResolver.PE, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\AsmResolver.PE.dll</HintPath>
+    </Reference>
+    <Reference Include="AsmResolver.PE.File, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\AsmResolver.PE.File.dll</HintPath>
+    </Reference>
+    <Reference Include="AssetRipper.VersionUtilities, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\AssetRipper.VersionUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="AssetsTools.NET, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\AssetsTools.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="bHapticsLib, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\bHapticsLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Iced, Version=1.17.0.0, Culture=neutral, PublicKeyToken=5baba79f4264913b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Iced.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Common, Version=1.4.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Il2CppInterop.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Generator, Version=1.4.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Il2CppInterop.Generator.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Runtime, Version=1.4.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Il2CppInterop.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="IndexRange, Version=1.0.2.0, Culture=neutral, PublicKeyToken=35e6a3c4212514c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\IndexRange.dll</HintPath>
+    </Reference>
+    <Reference Include="MelonLoader, Version=0.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\MelonLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="MelonLoader.NativeHost, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\MelonLoader.NativeHost.dll</HintPath>
+    </Reference>
+    <Reference Include="MelonStartScreen, Version=0.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\MelonStartScreen.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Diagnostics.NETCore.Client, Version=0.2.5.1802, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Microsoft.Diagnostics.NETCore.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Diagnostics.Runtime, Version=2.4.8.16101, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Microsoft.Diagnostics.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.SystemEvents, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Microsoft.Win32.SystemEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour, Version=22.7.31.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\MonoMod.RuntimeDetour.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils, Version=22.7.31.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\MonoMod.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.ConfigurationManager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Common, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.ProtectedData, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\System.Security.Cryptography.ProtectedData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Extensions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\System.Windows.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Tomlet, Version=5.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\Tomlet.dll</HintPath>
+    </Reference>
+    <Reference Include="WebSocketDotNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Core\Resources\Dependencies\net6\WebSocketDotNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
