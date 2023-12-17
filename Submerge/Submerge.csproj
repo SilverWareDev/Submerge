@@ -12,21 +12,31 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Reference Include="com.rlabrecque.steamworks.net">
+        <HintPath>Managed\Managed\com.rlabrecque.steamworks.net.dll</HintPath>
+      </Reference>
       <Reference Include="MelonLoader">
         <HintPath>Managed\MelonLoader\net6\MelonLoader.dll</HintPath>
       </Reference>
     </ItemGroup>
 
     <ItemGroup>
+      <Compile Remove="Core\Facepunch.Steamworks\**" />
       <Compile Remove="Managed\**" />
     </ItemGroup>
 
     <ItemGroup>
+      <EmbeddedResource Remove="Core\Facepunch.Steamworks\**" />
       <EmbeddedResource Remove="Managed\**" />
     </ItemGroup>
 
     <ItemGroup>
+      <None Remove="Core\Facepunch.Steamworks\**" />
       <None Remove="Managed\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Core\" />
     </ItemGroup>
 
 </Project>
