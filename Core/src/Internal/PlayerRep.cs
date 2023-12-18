@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MelonLoader;
 using UnityEngine;
 
 namespace Submerg.Internal
@@ -13,7 +14,7 @@ namespace Submerg.Internal
         public Vector3 Position;
         public Quaternion Rotation;
 
-        public GameObject Rep;
+        public GameObject LocalRep = Player.mainObject;
 
         public PlayerRep(Transform transform)
         {
@@ -21,9 +22,16 @@ namespace Submerg.Internal
             Rotation = transform.rotation;
         }
 
-        public void Update() 
+        /*public static void CheckForRep() 
         {
-        
-        }
+            if (Player.mainObject != null)
+            {
+                MelonLogger.Msg("Player isnt null");
+            }
+            else
+            {
+                MelonLogger.Msg("Player is null or not found");
+            }
+        }*/
     }
 }
