@@ -14,6 +14,6 @@ public class Mod : MelonMod
 
     public override void OnLateInitializeMelon()
     {
-        InitSteam.Init();
+
     }
 }
