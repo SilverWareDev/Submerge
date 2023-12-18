@@ -354,6 +354,7 @@ MigrationBackup/
 
 **/[Mm]anaged/
 **/[Bb]in/
+**/[Nn]et6/
 
 # Build results
 [Dd]ebug/
