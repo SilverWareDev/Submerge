@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Submerge.Network
 {
-    public class SubmergeMessage
+    public class PlayerRepManager
     {
+
     }
 }

@@ -8,10 +8,29 @@ namespace Submerge.Network
 {
     public abstract class NetworkLayer
     {
-        internal abstract void OnInitializeLayer();
+        private Type _type;
+        private bool _hasType;
 
-        internal abstract void OnLateInitializeLayer();
+        /// <summary>
+        /// The Type of this NetworkLayer.
+        /// </summary>
+        internal Type Type
+        {
+            get
+            {
+                if (!_hasType)
+                {
+                    _type = GetType();
+                    _hasType = true;
+                }
+                return _type;
+            }
+        }
 
-        internal abstract void SendToAll(SubmergeMessage message);
+        internal virtual string Title => Type.AssemblyQualifiedName;
+
+        internal virtual bool IsServer => false;
+
+        internal virtual bool IsClient => false;
     }
 }
