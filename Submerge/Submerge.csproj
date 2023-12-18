@@ -12,11 +12,20 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Reference Include="Assembly-CSharp">
+        <HintPath>Managed\Managed\Assembly-CSharp.dll</HintPath>
+      </Reference>
+      <Reference Include="Assembly-CSharp-firstpass">
+        <HintPath>Managed\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      </Reference>
       <Reference Include="com.rlabrecque.steamworks.net">
         <HintPath>Managed\Managed\com.rlabrecque.steamworks.net.dll</HintPath>
       </Reference>
       <Reference Include="MelonLoader">
         <HintPath>Managed\MelonLoader\net6\MelonLoader.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine">
+        <HintPath>Managed\Managed\UnityEngine.dll</HintPath>
       </Reference>
     </ItemGroup>
 
@@ -36,7 +45,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Core\" />
+      <Folder Include="Core\Networking\" />
+      <Folder Include="Core\Utils\" />
     </ItemGroup>
 
 </Project>
