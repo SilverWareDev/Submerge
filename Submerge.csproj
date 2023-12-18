@@ -14,6 +14,8 @@
     <ItemGroup>
       <Compile Remove="Core\Facepunch.Steamworks\**" />
       <Compile Remove="Core\Networking\**" />
+      <Compile Remove="Core\Resources\Dependencies\Managed\**" />
+      <Compile Remove="Core\Resources\Dependencies\net6\**" />
       <Compile Remove="Core\Utils\**" />
       <Compile Remove="Managed\**" />
     </ItemGroup>
@@ -21,6 +23,8 @@
     <ItemGroup>
       <EmbeddedResource Remove="Core\Facepunch.Steamworks\**" />
       <EmbeddedResource Remove="Core\Networking\**" />
+      <EmbeddedResource Remove="Core\Resources\Dependencies\Managed\**" />
+      <EmbeddedResource Remove="Core\Resources\Dependencies\net6\**" />
       <EmbeddedResource Remove="Core\Utils\**" />
       <EmbeddedResource Remove="Managed\**" />
     </ItemGroup>
@@ -28,11 +32,22 @@
     <ItemGroup>
       <None Remove="Core\Facepunch.Steamworks\**" />
       <None Remove="Core\Networking\**" />
+      <None Remove="Core\Resources\Dependencies\Managed\**" />
+      <None Remove="Core\Resources\Dependencies\net6\**" />
       <None Remove="Core\Utils\**" />
       <None Remove="Managed\**" />
     </ItemGroup>
 
     <ItemGroup>
+      <Reference Include="Assembly-CSharp">
+        <HintPath>Core\Resources\Dependencies\Managed\Assembly-CSharp.dll</HintPath>
+      </Reference>
+      <Reference Include="Assembly-CSharp-firstpass">
+        <HintPath>Core\Resources\Dependencies\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      </Reference>
+      <Reference Include="com.rlabrecque.steamworks.net">
+        <HintPath>Core\Resources\Dependencies\Managed\com.rlabrecque.steamworks.net.dll</HintPath>
+      </Reference>
       <Reference Include="MelonLoader">
         <HintPath>Core\Resources\Dependencies\net6\MelonLoader.dll</HintPath>
       </Reference>
@@ -273,6 +288,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Core\Resources\Dependencies\" />
       <Folder Include="Core\src\Utilities\" />
     </ItemGroup>
 

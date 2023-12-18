@@ -32,5 +32,7 @@ namespace Submerge.Network
         internal virtual bool IsServer => false;
 
         internal virtual bool IsClient => false;
+
+        internal virtual bool IsAdmin => false;
     }
 }
