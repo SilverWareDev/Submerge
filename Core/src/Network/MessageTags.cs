@@ -18,6 +18,8 @@ namespace Submerge.Network
     {
         public const ushort PlayerSpawn = 1;
         public const ushort PlayerTransform = 2;
+        public const ushort LifePodInfo = 3;
+        public const ushort TimeOfDay = 4;
 
         public const ushort Connect = 301;
         public const ushort PlayerInfo = 302;

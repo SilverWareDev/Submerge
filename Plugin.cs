@@ -36,8 +36,6 @@ namespace Submerge
         public void Update()
         {
             NetworkManager.Update();
-
-            LifePod.LifePodPosition();
         }
     }
 }
