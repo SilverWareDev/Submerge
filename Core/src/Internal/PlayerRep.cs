@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Submerg.Internal
+namespace Submerge.Internal
 {
     public class PlayerRep
     {
