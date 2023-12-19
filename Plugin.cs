@@ -5,6 +5,7 @@ using Riptide;
 using Riptide.Utils;
 using Submerge.Network;
 using System.Reflection;
+using Submerge.Patching.Events;
 using UWE;
 
 namespace Submerge
@@ -35,6 +36,8 @@ namespace Submerge
         public void Update()
         {
             NetworkManager.Update();
+
+            LifePod.LifePodPosition();
         }
     }
 }

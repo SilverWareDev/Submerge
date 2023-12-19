@@ -20,7 +20,7 @@ namespace Submerge.Network
             msg.AddFloat(transform.position.y);
             msg.AddFloat(transform.position.z);
 
-            return msg.Add();
+            return msg.Add(0);
         }
 
         [MessageHandler(MessageTags.PlayerInfo)]

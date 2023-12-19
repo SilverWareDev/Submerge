@@ -10,8 +10,8 @@ namespace Submerge.Utilities
 {
     public class PlayerRepManager
     {
-        public static PlayerRep LocalRep = new(new());
-        public static List<PlayerRep> ActiveReps = new List<PlayerRep>();
+        /*public static PlayerRepPatch LocalRep = new(new());
+        public static List<PlayerRepPatch> ActiveReps = new List<PlayerRepPatch>();*/
 
         public static List<byte> PlayerIds = new List<byte>();
 
