@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.6.33723.286
+VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Submerge", "Submerge.csproj", "{D1808026-EDAD-46E4-8E29-EB75FB81242D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Submerge", "Submerge.csproj", "{2CE54721-24CC-434E-9170-2AB373CA6B50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D1808026-EDAD-46E4-8E29-EB75FB81242D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D1808026-EDAD-46E4-8E29-EB75FB81242D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D1808026-EDAD-46E4-8E29-EB75FB81242D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D1808026-EDAD-46E4-8E29-EB75FB81242D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CE54721-24CC-434E-9170-2AB373CA6B50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CE54721-24CC-434E-9170-2AB373CA6B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CE54721-24CC-434E-9170-2AB373CA6B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CE54721-24CC-434E-9170-2AB373CA6B50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {068E18B9-ED40-4CDA-973E-442543B91D64}
+		SolutionGuid = {0E452CBF-E2A9-4940-B99A-ACD4A336CB89}
 	EndGlobalSection
 EndGlobal

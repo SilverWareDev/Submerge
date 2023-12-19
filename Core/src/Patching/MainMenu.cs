@@ -1,53 +1,28 @@
-﻿using MelonLoader;
+﻿using HarmonyLib;
+using static UnityEngine.UI.Selectable;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using UWE;
-using System;
 
-#nullable disable
-namespace Submerge.Patching
+namespace Submerge.Patching;
+
+[HarmonyPatch(typeof(uGUI_MainMenu))]
+internal class MainMenuPatches
 {
-    public class MainMenu
+    [HarmonyPatch(nameof(uGUI_MainMenu.Awake))]
+    [HarmonyPostfix]
+    private static void AwakePatch(uGUI_MainMenu __instance)
     {
-        private static GameObject _StartButtonPrefab;
-
-        public static GameObject CreateButton(UnityAction btnListener = null)
-        {
-            string buttonText = "Multiplayer";
-
-            GameObject sideButton = UnityEngine.Object.Instantiate(StartButtonPrefab,
-                StartButtonPrefab.transform.parent);
-            sideButton.name = string.Format("CustomBtn_{0}", Guid.NewGuid().ToString());
-            sideButton.transform.SetSiblingIndex(3);
-            Button component1 = sideButton.GetComponent<Button>();
-            component1.onClick.RemoveAllListeners();
-            if (btnListener != null)
-            {
-                component1.onClick.AddListener(btnListener);
-            }
-
-            TextMeshProUGUI component2 = sideButton.transform.Find("Circle/Bar/Text")
-                .GetComponent<TextMeshProUGUI>();
-            component2.SetText(buttonText, true);
-            component2.GetComponent<TranslationLiveUpdate>().translationKey = buttonText;
-
-            MelonLogger.Msg("Multiplayer Button created!");
-
-            return sideButton;
-        }
-
-        public static GameObject StartButtonPrefab
-        {
-            get
-            {
-                if (UnityEngine.Object.Equals(_StartButtonPrefab, null))
-                    _StartButtonPrefab =
-                        GameObject.Find("Menu canvas/Panel/MainMenu/PrimaryOptions/MenuButtons/ButtonPlay");
-                return _StartButtonPrefab;
-            }
-        }
+        var playButton = __instance.gameObject.GetComponentInChildren<MainMenuPrimaryOptionsMenu>().transform.Find("PrimaryOptions/MenuButtons/ButtonPlay").gameObject;
+        var modManagerButton = Object.Instantiate(playButton);
+        modManagerButton.GetComponent<RectTransform>().SetParent(playButton.transform.parent, false);
+        modManagerButton.name = "Multiplayer";
+        var text = modManagerButton.GetComponentInChildren<TextMeshProUGUI>();
+        text.text = "Multiplayer";
+        Object.DestroyImmediate(text.gameObject.GetComponent<TranslationLiveUpdate>());
+        modManagerButton.transform.SetSiblingIndex(1);
+        var button = modManagerButton.GetComponent<Button>();
+        button.onClick = new Button.ButtonClickedEvent();
+        button.onClick.AddListener(null);
     }
 }
