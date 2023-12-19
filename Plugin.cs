@@ -3,6 +3,7 @@ using BepInEx.Logging;
 using HarmonyLib;
 using Riptide;
 using Riptide.Utils;
+using Submerge.Network;
 using System.Reflection;
 using UWE;
 
@@ -24,9 +25,16 @@ namespace Submerge
             Harmony.CreateAndPatchAll(Assembly, $"{PluginInfo.PLUGIN_GUID}");
             Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
 
+#if DEBUG
             RiptideLogger.Initialize(Plugin.Logger.LogInfo, Plugin.Logger.LogInfo, Plugin.Logger.LogWarning, Plugin.Logger.LogError, true);
+#endif
 
             Server server = new Server();
+        }
+
+        public void Update()
+        {
+            NetworkManager.Update();
         }
     }
 }

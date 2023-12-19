@@ -7,7 +7,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using Logger = BepInEx.Logging.Logger;
 using Riptide;
-using Submerge.Core.src.Network.Riptide;
+using Submerge.Network;
 using Riptide.Transports;
 using UnityEngine.SceneManagement;
 
@@ -15,10 +15,8 @@ using UnityEngine.SceneManagement;
 namespace Submerge.Patching;
 
 [HarmonyPatch(typeof(uGUI_MainMenu))]
-public class MainMenu
+public class MainMenuPatch
 {
-    static Server server = new Server();
-
     private static GameObject SavedGamesPrefab;
 
     [HarmonyPatch(nameof(uGUI_MainMenu.Awake))]
@@ -52,17 +50,14 @@ public class MainMenu
 
     public static void RightSideMenuJoin()
     {
-        Plugin.Logger.LogInfo("Button Join Pressed");
-        Client client = new Client();
-        client.Connect("127.0.0.1:7777");
+        RiptideClient.CurrentClient.Connect("INSTERTIPHERE:7777");
 
-        client.Connected += (sender, args) => Internal.SaveManager.CreateSaveClient();
+        RiptideClient.CurrentClient.Connected += (sender, args) => Internal.SaveManager.CreateSaveClient();
     }
 
     public static void RightSideMenuHost()
     {
-        Plugin.Logger.LogInfo("Button Host Pressed");
-        server.Start(7777, 8);
+        RiptideServer.CurrentServer.Start(7777, 8);
 
         Internal.SaveManager.CreateSaveHost();
     }

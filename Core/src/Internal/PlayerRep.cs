@@ -9,6 +9,8 @@ namespace Submerge.Internal
 {
     public class PlayerRep
     {
+        public byte PlayerId;
+
         public Vector3 Position;
         public Quaternion Rotation;
 
