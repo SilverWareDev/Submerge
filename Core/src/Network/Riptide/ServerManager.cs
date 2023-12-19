@@ -8,6 +8,6 @@ namespace Submerge.Core.src.Network.Riptide
 {
     public class ServerManager
     {
-        public bool IsServer = false;
+       
     }
 }

@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using System.Collections;
+using HarmonyLib;
 using static UnityEngine.UI.Selectable;
 using TMPro;
 using UnityEngine;
@@ -8,6 +9,7 @@ using Logger = BepInEx.Logging.Logger;
 using Riptide;
 using Submerge.Core.src.Network.Riptide;
 using Riptide.Transports;
+using UnityEngine.SceneManagement;
 
 namespace Submerge.Patching;
 
@@ -35,14 +37,14 @@ public class MainMenu
         buttonPlayMethod.onClick.AddListener(() => RightSideMenuJoin());
 
         var hostButton = __instance.gameObject.GetComponentInChildren<MainMenuPrimaryOptionsMenu>().transform.Find("PrimaryOptions/MenuButtons/ButtonPlay").gameObject;
-        var modManagerButton = Object.Instantiate(playButton);
-        modManagerButton.GetComponent<RectTransform>().SetParent(playButton.transform.parent, false);
-        modManagerButton.name = "Multiplayer_Host";
-        var textHost = modManagerButton.GetComponentInChildren<TextMeshProUGUI>();
+        var _hostButton = Object.Instantiate(hostButton);
+        _hostButton.GetComponent<RectTransform>().SetParent(hostButton.transform.parent, false);
+        _hostButton.name = "Multiplayer_Host";
+        var textHost = _hostButton.GetComponentInChildren<TextMeshProUGUI>();
         textHost.text = "Multiplayer_Host";
         Object.DestroyImmediate(textHost.gameObject.GetComponent<TranslationLiveUpdate>());
-        modManagerButton.transform.SetSiblingIndex(1);
-        var buttonHostMethod = modManagerButton.GetComponent<Button>();
+        _hostButton.transform.SetSiblingIndex(1);
+        var buttonHostMethod = _hostButton.GetComponent<Button>();
         buttonHostMethod.onClick = new Button.ButtonClickedEvent();
         buttonHostMethod.onClick.AddListener(() => RightSideMenuHost());
     }
@@ -52,17 +54,15 @@ public class MainMenu
         Plugin.Logger.LogInfo("Button Join Pressed");
         Client client = new Client();
         client.Connect("127.0.0.1:7777");
+
+        client.Connected += (sender, args) => Internal.SaveManager.CreateSaveClient();
     }
 
     public static void RightSideMenuHost()
     {
         Plugin.Logger.LogInfo("Button Host Pressed");
         server.Start(7777, 8);
-    }
 
-    private static void FixedUpdate()
-    {
-        server.Update();
-        Plugin.Logger.LogInfo("Server Updated");
+        Internal.SaveManager.CreateSaveHost();
     }
 }
