@@ -11,8 +11,8 @@ namespace Submerge.Network
 {
     public class NetworkManager
     {
-        public bool IsServer = false;
-        public bool IsClient = false;
+        public static bool IsServer = false;
+        public static bool IsClient = false;
 
         public NetworkManager()
         {

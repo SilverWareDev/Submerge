@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using Riptide;
 using Submerge.Network;
 using TMPro;
 using UnityEngine;
@@ -11,6 +12,8 @@ namespace Submerge.Patching
     [HarmonyPatch(typeof(uGUI_MainMenu))]
     public class MainMenuPatch
     {
+        public static Server TestServer = new();
+
         public static string ip = "127.0.0.1";
         private static GameObject SavedGamesPrefab;
 
@@ -43,14 +46,25 @@ namespace Submerge.Patching
             joinServer.name = "JoinServer";
             joinServer.transform.SetParent(saveMenu.transform, false);
             joinServer.transform.localPosition = new Vector3(-400, 450, 0);
-
-            // TODO: Change join server menu text
         }
 
         public static void MButtonMethod()
         {
-            Plugin.Logger.LogInfo("Button Pressed");
+            NetworkManager.IsClient = false;
+            Plugin.Logger.LogInfo("IsClient = " + NetworkManager.IsClient);
+            RiptideServer.StartServer();
             MainMenuRightSide.main.OpenGroup("SavedGames");
+
+            var joinServerHeader = GameObject.Find("Menu canvas/Panel/MainMenu/RightSide/SavedGames/JoinServer/HeaderText");
+            var joinServerHeaderText = joinServerHeader.GetComponent<TextMeshProUGUI>();
+            joinServerHeaderText.SetText("Join Server");
+
+            var joinServerPlaceholder = GameObject.Find("Menu canvas/Panel/MainMenu/RightSide/SavedGames/JoinServer/InputField/Placeholder");
+            var joinServerPlaceholderText = joinServerPlaceholder.GetComponent<TextMeshProUGUI>();
+            joinServerPlaceholderText.SetText("Enter the IP you would like to connect to");
+
+            var joinServerPastUpdates = GameObject.Find("Menu canvas/Panel/MainMenu/RightSide/SavedGames/JoinServer/ViewPastUpdates");
+            joinServerPastUpdates.SetActive(false);
         }
         public static void ConnectToServer()
         {
@@ -62,6 +76,9 @@ namespace Submerge.Patching
             ip = joinServerString.email;
 
             NetworkManager.ConnectToServer(ip, 7777);
+            RiptideClient.CurrentClient.Connected += (sender, args) => Internal.SaveManager.CreateSaveClient();
+            NetworkManager.IsClient = true;
+            Plugin.Logger.LogInfo("IsClient = " + NetworkManager.IsClient);
         }
     }
 

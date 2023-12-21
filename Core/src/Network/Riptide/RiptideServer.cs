@@ -19,6 +19,8 @@ namespace Submerge.Network
 
             if (CurrentClient.IsConnected)
                 CurrentClient.Disconnect();
+
+            CurrentServer.Start(7777, 8);
         }
     }
 }

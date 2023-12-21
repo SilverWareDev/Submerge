@@ -36,14 +36,14 @@ namespace Submerge
             Server server = new Server();
         }
 
-        public void Update()
+        private void Update()
         {
-                
+            NetworkManager.Update();
         }
 
         private void FixedUpdate()
         {
-            NetworkManager.Update();
+            
         }
     }
 }
