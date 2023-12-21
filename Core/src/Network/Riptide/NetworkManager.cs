@@ -14,13 +14,6 @@ namespace Submerge.Network
         public bool IsServer = false;
         public bool IsClient = false;
 
-        /*[HarmonyPostfix]
-        [HarmonyPatch("sendEmail")]
-        public static void Postfix(MainMenuEmailHandler __instance, ref string ip)
-        {
-            NetworkManager.ip = __instance.email;
-        }*/
-
         public NetworkManager()
         {
 
@@ -32,13 +25,14 @@ namespace Submerge.Network
             RiptideClient.CurrentClient.Update();
         }
 
-        public async Task ConnectToServer(string ip, int port = 7777)
+        public static async Task ConnectToServer(string ip, int port = 7777)
         {
             RiptideClient.CurrentClient.Connect($"{ip}:{port}");
 
+            /* Crashes the game
             while (RiptideClient.CurrentClient.IsNotConnected) { Thread.Sleep(100); }
 
-            while (SceneManager.GetActiveScene().name != "Main") { Thread.Sleep(100); }
+            while (SceneManager.GetActiveScene().name != "Main") { Thread.Sleep(100); }*/
         }
     }
 }
