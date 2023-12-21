@@ -11,6 +11,7 @@ namespace Submerge.Patching;
 public class MainMenuPatch
 {
     private static GameObject SavedGamesPrefab;
+    public static string ip;
 
     [HarmonyPatch(nameof(uGUI_MainMenu.Awake))]
     [HarmonyPostfix]
@@ -38,10 +39,16 @@ public class MainMenuPatch
 
         var devEmail = GameObject.Find("Menu canvas/Panel/MainMenu/RightSide/Home/EmailBox");
         var joinServer = Object.Instantiate(devEmail);
+        devEmail.SetActive(false);
         joinServer.name = "JoinServer";
         joinServer.transform.SetParent(saveMenu.transform, false);
-        joinServer.transform.localPosition = new Vector3(-400, 500, 0);
-        joinServer.SetActive(true);
+        joinServer.transform.localPosition = new Vector3(-400, 450, 0);
+
+        // this shit doesnt work, this shit is annoying as fuck
+        var joinServerHandler = GameObject.Find("Menu canvas/Panel/MainMenu/RightSide/SavedGames/JoinServer");
+        var joinServerString = joinServerHandler.GetComponentInChildren<MainMenuEmailHandler>();
+
+        joinServerString.email = ip;
     }
 
     public static void MButtonMethod()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HarmonyLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,18 @@ namespace Submerge.Network
     {
         public bool IsServer = false;
         public bool IsClient = false;
-        
+
+        /*[HarmonyPostfix]
+        [HarmonyPatch("sendEmail")]
+        public static void Postfix(MainMenuEmailHandler __instance, ref string ip)
+        {
+            NetworkManager.ip = __instance.email;
+        }*/
+
+        public NetworkManager()
+        {
+
+        }
 
         public static void Update()
         {

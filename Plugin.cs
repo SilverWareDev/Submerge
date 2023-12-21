@@ -38,7 +38,7 @@ namespace Submerge
 
         public void Update()
         {
-            
+            Plugin.Logger.LogInfo(MainMenuPatch.ip);
         }
 
         private void FixedUpdate()
