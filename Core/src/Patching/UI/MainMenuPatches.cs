@@ -12,10 +12,7 @@ namespace Submerge.Patching
     [HarmonyPatch(typeof(uGUI_MainMenu))]
     public class MainMenuPatch
     {
-        public static Server TestServer = new();
-
         public static string ip = "127.0.0.1";
-        private static GameObject SavedGamesPrefab;
 
         [HarmonyPatch(nameof(uGUI_MainMenu.Awake))]
         [HarmonyPostfix]
@@ -68,8 +65,6 @@ namespace Submerge.Patching
         }
         public static void ConnectToServer()
         {
-            // Connects two or three times, needs debugging
-
             var joinServerHandler = GameObject.Find("Menu canvas/Panel/MainMenu/RightSide/SavedGames/JoinServer");
             var joinServerString = joinServerHandler.GetComponentInChildren<MainMenuEmailHandler>();
 
