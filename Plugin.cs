@@ -5,8 +5,11 @@ using Riptide;
 using Riptide.Utils;
 using Submerge.Network;
 using System.Reflection;
-using Submerge.Patching.Events;
+using Submerge.Patching;
 using UWE;
+using Riptide.Transports;
+using TMPro;
+using UnityEngine;
 
 namespace Submerge
 {
@@ -34,6 +37,11 @@ namespace Submerge
         }
 
         public void Update()
+        {
+            
+        }
+
+        private void FixedUpdate()
         {
             NetworkManager.Update();
         }

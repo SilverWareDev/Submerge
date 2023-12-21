@@ -10,6 +10,10 @@ namespace Submerge.Network
 {
     public class NetworkManager
     {
+        public bool IsServer = false;
+        public bool IsClient = false;
+        
+
         public static void Update()
         {
             RiptideServer.CurrentServer.Update();
@@ -23,8 +27,6 @@ namespace Submerge.Network
             while (RiptideClient.CurrentClient.IsNotConnected) { Thread.Sleep(100); }
 
             while (SceneManager.GetActiveScene().name != "Main") { Thread.Sleep(100); }
-
-
         }
     }
 }
