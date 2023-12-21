@@ -47,8 +47,8 @@ namespace Submerge.Patching
 
         public static void MButtonMethod()
         {
-            NetworkManager.IsClient = false;
-            Plugin.Logger.LogInfo("IsClient = " + NetworkManager.IsClient);
+            RiptideClient.CurrentClient.Disconnect();
+
             RiptideServer.StartServer();
             MainMenuRightSide.main.OpenGroup("SavedGames");
 
@@ -72,8 +72,6 @@ namespace Submerge.Patching
 
             NetworkManager.ConnectToServer(ip, 7777);
             RiptideClient.CurrentClient.Connected += (sender, args) => Internal.SaveManager.CreateSaveClient();
-            NetworkManager.IsClient = true;
-            Plugin.Logger.LogInfo("IsClient = " + NetworkManager.IsClient);
         }
     }
 
